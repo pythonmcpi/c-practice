@@ -6,15 +6,16 @@
 double x_to_int_n(double x, int n);
 
 int main(void) {
-    double x, n;
+    double x;
+    int n;
     printf("Enter a number: ");
     scanf("%lf", &x);
     printf("Enter a power: ");
-    scanf("%lf", &n);
+    scanf("%d", &n);
 
     double y = x_to_int_n(x, n);
 
-    printf("%.2f ** %.2f = %.2f", x, n, y);
+    printf("%.2f ** %d = %.2f\n", x, n, y);
 
     return 0;
 }

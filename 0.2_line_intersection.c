@@ -26,7 +26,7 @@ int main(void) {
     double yint2 = y3 - (slope2 * x3);
 
     if (slope1 == slope2) {
-        if (yint1 == yint2) {
+        if (yint1 == yint2) { /* TODO: Check if lines actually touch */
             printf("Lines overlap\n");
             return 0;
         }
@@ -37,7 +37,10 @@ int main(void) {
     double x = (yint2 - yint1) / (slope1 - slope2);
     double y = (slope1 * x) + yint1;
 
-    printf("Intersection at (%.2f, %.2f)", x, y);
+    if (x1 <= x && x <= x2 && x3 <= x && x <= x4) /* Check and make sure the intersection is on the line */
+        printf("Intersection at (%.2f, %.2f)\n", x, y);
+    else
+        printf("No intersection\n");
 
     return 0;
 }
